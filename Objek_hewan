@@ -1,0 +1,33 @@
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class Objek_Hewan {
+    public static void main(String[] args) {
+        LinkedList<String> Hewan = new LinkedList<>();
+        Hewan.add("Sapi");
+        Hewan.add("Kelinci");
+        Hewan.add("Kambing");
+        Hewan.add("Unta");
+        Hewan.add("Domba");
+        System.out.println("Hewan :" +Hewan);
+
+        LinkedList<String> delete = new LinkedList<>();
+        delete.add("Kelinci");
+        delete.add("Kambing");
+        delete.add("Unta");
+        System.out.println("hewan yang akan dihapus");
+        System.out.println(delete);
+
+        Iterator<String> iterator = Hewan.iterator();
+        while(iterator.hasNext()){
+            String hewan = iterator.next();
+            if(delete.contains(hewan)){
+                iterator.remove();
+            }
+        }
+        System.out.println("Penghapusan berhasil");
+        for(String hewan : Hewan){
+            System.out.println(hewan);
+        }
+    }
+}
